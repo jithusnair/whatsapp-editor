@@ -1,0 +1,53 @@
+/* the styles are mostly from quilljs bubble theme */
+
+#editor {
+  position: relative;
+}
+
+#editor div {
+  border: var(--editor-border);
+  line-height: var(--editor-line-height);
+  padding: var(--editor-padding);
+}
+
+#editor p {
+  margin: 0;
+}
+
+#editor .tooltip {
+  background-color: var(--tooltip-background-color);
+  border-radius: var(--tooltip-border-radius);
+  color: var(--tooltip-color);
+  padding: var(--tooltip-padding);
+  position: absolute;
+}
+
+#editor .tooltip button {
+  background-color: transparent;
+  border: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: var(--tooltip-btn-font-size);
+  outline: transparent;
+  padding: var(--tooltip-btn-padding);
+  text-align: center;
+}
+
+#editor .tooltip .active {
+  color: var(--tooltip-btn-active);
+}
+
+:root {
+  --editor-border: 1px solid #ccc;
+  --editor-line-height: 1.4;
+  --editor-padding: 12px 15px;
+
+  --tooltip-background-color: #444;
+  --tooltip-border-radius: 25px;
+  --tooltip-color: #ccc;
+  --tooltip-padding: 0 10px;
+
+  --tooltip-btn-padding: 10px;
+  --tooltip-btn-font-size: 15px;
+  --tooltip-btn-active: #fff;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="/whatsapp-editor.css" />
+    <link rel="stylesheet" href="/styles/prosemirror.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Editor</title>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <script type="module">
+      import { WhatsAppEditor } from "./src/index.ts";
+
+      const editor = new WhatsAppEditor(
+        { position: "BOTTOM", distance: 10 },
+        document.querySelector("#editor")
+      );
+
+      const getData = editor.getWhatsappMarkdown;
+
+      window.getTheData = getData.bind(editor);
+    </script>
+    <button onclick="console.log(getTheData())">Click me</button>
+  </body>
+</html>
