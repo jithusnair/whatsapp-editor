@@ -1,0 +1,21 @@
+index.html
+
+# configs
+.eslintignore
+.eslintrc
+.prettierignore
+.stylelintignore
+.stylelintrc
+dts-bundle-generator.config.ts
+favicon.svg
+jest.config.ts
+tsconfig.json
+vite.config.ts
+
+# folders
+post-build-scripts
+test
+public
+
+# vite
+src/vite-env.d.ts

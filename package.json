@@ -2,14 +2,25 @@
   "name": "whatsapp-editor",
   "private": false,
   "version": "0.1.0",
+  "author": "Jithu S Nair work.jithus@gmail.com",
+  "license": "MIT",
   "main": "./dist/whatsapp-editor.cjs",
   "module": "./dist/whatsapp-editor.mjs",
   "exports": {
     ".": {
       "require": "./dist/whatsapp-editor.cjs",
       "import": "./dist/whatsapp-editor.mjs"
+    },
+    "./styles/prosemirror.css": {
+      "require": "./dist/styles/prosemirror.css",
+      "import": "./dist/styles/prosemirror.css"
+    },
+    "./styles/whatsapp-editor.css": {
+      "require": "./dist/styles/whatsapp-editor.css",
+      "import": "./dist/styles/whatsapp-editor.css"
     }
   },
+  "style": "./dist/style/prosemirror.css",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts && node ./post-build-scripts/index.js",
@@ -20,9 +31,13 @@
     "format:scripts": "prettier . --write",
     "format:styles": "stylelint ./**/*.{css,scss} --fix",
     "format": "npm run format:scripts && npm run format:styles",
-    "prepare": "husky install && husky add .husky/pre-commit 'npx lint-staged' && git add .husky/pre-commit",
     "commit": "cz",
     "release": "standard-version"
+  },
+  "homepage": "https://github.com/jithusnair/whatsapp-editor.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jithusnair/whatsapp-editor.git"
   },
   "devDependencies": {
     "@types/jest": "^29.0.0",
@@ -36,9 +51,7 @@
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.2",
     "jest": "^28.1.3",
-    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "standard-version": "^9.5.0",
     "stylelint": "^14.11.0",
