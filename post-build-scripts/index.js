@@ -13,8 +13,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const currentPath = path.join(__dirname, "..", "dist", "whatsapp-editor.css");
-const destinationPath = path.join(
+const cssPath = path.join(__dirname, "..", "dist", "whatsapp-editor.css");
+const cssDestinationPath = path.join(
   __dirname,
   "..",
   "dist",
@@ -22,10 +22,20 @@ const destinationPath = path.join(
   "whatsapp-editor.css"
 );
 
-fs.rename(currentPath, destinationPath, function (err) {
+const imgPath = path.join(__dirname, "..", "dist", "editor.png");
+
+fs.rename(cssPath, cssDestinationPath, function (err) {
   if (err) {
     throw err;
   } else {
-    console.log("Successfully moved the file!");
+    console.log("Successfully moved whatsapp-editor.css file!");
+  }
+});
+
+fs.unlink(imgPath, function (err) {
+  if (err) {
+    throw err;
+  } else {
+    console.log("Successfully deleted the image file!");
   }
 });
