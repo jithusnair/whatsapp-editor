@@ -64,10 +64,12 @@ class WhatsAppEditor extends EditorView {
 
 Following shortcuts have been implemented.
 
-`Ctrl/⌘+b`: Bold
-`Ctrl/⌘+i`: Italic
-`Alt/⌥+s`: Strikethrough
-`Ctrl/⌘+m`: Monospace
+- `Ctrl/⌘ + z`: Undo
+- `Ctrl/⌘ + y`: Redo
+- `Ctrl/⌘ + b`: Bold
+- `Ctrl/⌘ + i`: Italic
+- `Alt/⌥ + s`: Strikethrough
+- `Ctrl/⌘ + m`: Monospace
 
 _Note: Undo, redo shortcuts are not supported yet._
 

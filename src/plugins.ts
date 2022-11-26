@@ -1,7 +1,7 @@
 import { Plugin, PluginKey } from "prosemirror-state";
-import { baseKeymap } from "prosemirror-commands";
+import { baseKeymap, toggleMark } from "prosemirror-commands";
+import { history, undo, redo } from "prosemirror-history";
 import { keymap } from "prosemirror-keymap";
-import { toggleMark } from "prosemirror-commands";
 import { Tooltip } from "./tooltip";
 import { schema } from "./schema";
 import { TooltipPosition } from "./tooltip.types";
@@ -44,7 +44,10 @@ export const initTooltipPlugin = (tooltipOptions: TooltipPosition) => {
 // default plugins and shortcuts
 export const defaultPlugins = [
   keymap(baseKeymap),
+  history({ newGroupDelay: 300 }),
   keymap({
+    "Mod-z": undo,
+    "Mod-y": redo,
     "Mod-b": toggleMark(schema.marks.strong),
     "Mod-i": toggleMark(schema.marks.em),
     "Alt-s": toggleMark(schema.marks.s),
