@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.3.1](https://github.com/jithusnair/whatsapp-editor/compare/v0.3.0...v0.3.1) (2022-11-28)
+
+
+### Bug Fixes
+
+* throws error when using getWhatsappMarkdown() method on custom editor implementation ([be84073](https://github.com/jithusnair/whatsapp-editor/commit/be84073e9e149e1ddf231f38b62c3ab1bf4f763d))
+
 ## [0.3.0](https://github.com/jithusnair/whatsapp-editor/compare/v0.2.3...v0.3.0) (2022-11-28)
 
 
