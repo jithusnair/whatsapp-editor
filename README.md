@@ -71,8 +71,6 @@ Following shortcuts have been implemented.
 - `Alt/⌥ + s`: Strikethrough
 - `Ctrl/⌘ + m`: Monospace
 
-_Note: Undo, redo shortcuts are not supported yet._
-
 ## Limitations
 
 Typing Whatsapp-markdown directly _will not_ convert the text style automatically. Meaning if you type:
