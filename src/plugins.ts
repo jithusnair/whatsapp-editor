@@ -5,6 +5,7 @@ import { keymap } from "prosemirror-keymap";
 import { Tooltip } from "./tooltip";
 import { schema } from "./schema";
 import { TooltipPosition } from "./tooltip.types";
+import { inputRulesPlungin } from "./input-rules";
 
 export const key = new PluginKey("tooltip");
 
@@ -53,4 +54,5 @@ export const defaultPlugins = [
     "Alt-s": toggleMark(schema.marks.s),
     "Mod-m": toggleMark(schema.marks.code),
   }),
+  inputRulesPlungin,
 ];

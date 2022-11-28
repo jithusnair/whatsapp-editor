@@ -73,16 +73,12 @@ Following shortcuts have been implemented.
 
 ## Limitations
 
-Typing Whatsapp-markdown directly _will not_ convert the text style automatically. Meaning if you type:
+~~Typing Whatsapp-markdown directly _will not_ convert the text style automatically.~~
 
-```txt
-We'll see you at *4PM*
-```
-it **_will not_** become:
+The library now implements this using `prosemirror-inputrules` which uses regexes. However, it is still a work in progress. There are a couple of limitations:
 
-```html
-<p>We'll see you at <strong>4PM</strong></p>
-```
+- The whatsapp-markdown-regexes are always matched on texts _before_ the cursor position (there are some weird quirks because of this)
+- The conversion will only happen if the user types in the text - meaning copy pasting whatsapp-markdown will not trigger a conversion.
 
 ## Advanced
 
