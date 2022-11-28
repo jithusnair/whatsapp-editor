@@ -6,14 +6,17 @@ import { setMarksOnText } from "./helper";
 import { TooltipPosition } from "./tooltip.types";
 
 export class WhatsAppEditor extends EditorView {
+  private isCustomEditor: boolean;
   /// @internal
   constructor(
     tooltipOptions: TooltipPosition,
     ...args: ConstructorParameters<typeof EditorView>
   ) {
     // if configuration is provided tooltip will be ignored
-    if (args[1]) super(...args);
-    else {
+    if (args[1]) {
+      super(...args);
+      this.isCustomEditor = true;
+    } else {
       const tooltipConfig = tooltipOptions ?? {
         position: "BOTTOM",
         distance: 10,
@@ -23,11 +26,18 @@ export class WhatsAppEditor extends EditorView {
         plugins: [initTooltipPlugin(tooltipConfig), ...defaultPlugins],
       });
       super(args[0], { state });
+      this.isCustomEditor = false;
     }
   }
 
   // get whatsapp-style-markdown string
   getWhatsappMarkdown() {
+    if (this.isCustomEditor) {
+      const error = new Error("Method is forbidden for custom editor");
+      error.name = "FORBIDDEN";
+      throw error;
+    }
+
     const documentContent = this.state.toJSON().doc.content;
 
     if (!documentContent.length) return null;

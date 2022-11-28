@@ -131,7 +131,7 @@ const editor = new WhatsAppEditor(
 );
 ```
 
-_Note: If you change the schema, the tooltip and the `WhatsAppEditor.getWhatsappMarkdown()` method will not work._
+_Note: If you change the schema, the tooltip and the `WhatsAppEditor.getWhatsappMarkdown()` method will not work. In fact, attempting to use editor method will throw an error._
 
 ### CSS
 
