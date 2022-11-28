@@ -1,11 +1,12 @@
 import { InputRule, inputRules } from "prosemirror-inputrules";
 import { MarkType } from "prosemirror-model";
+import { Transaction } from "prosemirror-state";
 import { schema } from "./schema";
 
 // this is largely from: https://discuss.prosemirror.net/t/input-rules-for-wrapping-marks/537/11
 function markInputRule(regexp: RegExp, markType: MarkType) {
-  return new InputRule(regexp, (state, match, start, end) => {
-    const tr = state.tr;
+  return new InputRule(regexp, (state, _match, start, end) => {
+    const tr: Transaction = state.tr;
     const textStart = start + 1;
     const textEnd = end;
     tr.addMark(textStart, textEnd, markType.create());
